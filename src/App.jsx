@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { AnimatePresence } from "framer-motion"
 
-import './App.css'
+import './index.css'
 import Navbar from './Comonent/Navbar'
 import {Routes,Route,useLocation} from "react-router-dom"
 // import { Home } from 'lucide-react'

@@ -7,9 +7,9 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogoClick = () => {
-    navigate("/");         
-    window.scrollTo(0, 0); 
-    setMenuOpen(false);    // close menu if open
+    navigate("/");
+    window.scrollTo(0, 0);
+    setMenuOpen(false); // close menu if open
   };
 
   const menu = [
@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className="bg-[#edf6ee] px-6 py-4 flex items-center justify-between sticky top-0 z-50 shadow-md">
       {/* Left Logo & Name */}
-      <div 
+      <div
         className="flex items-center gap-3 cursor-pointer"
         onClick={handleLogoClick}
       >
@@ -35,7 +35,9 @@ const Navbar = () => {
           <h1 className="font-fraunces text-green-900 text-lg sm:text-2xl font-normal tracking-tight">
             Plantlife Landscaping
           </h1>
-          <p className="text-xs sm:text-sm text-green-700">The Greenish Landscape</p>
+          <p className="text-xs sm:text-sm text-green-700">
+            The Greenish Landscape
+          </p>
         </div>
       </div>
 
@@ -59,17 +61,18 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
-        {menuOpen ? (
-          <X 
-            className="w-7 h-7 text-green-900 cursor-pointer" 
-            onClick={() => setMenuOpen(false)} 
-          />
-        ) : (
-          <Menu 
-            className="w-7 h-7 text-green-900 cursor-pointer" 
-            onClick={() => setMenuOpen(true)} 
-          />
-        )}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={`p-2 rounded transition-colors ${
+            menuOpen ? "bg-green-800 text-white" : "bg-transparent text-green-900"
+          }`}
+        >
+          {menuOpen ? (
+            <X className="w-7 h-7" />
+          ) : (
+            <Menu className="w-7 h-7" />
+          )}
+        </button>
       </div>
 
       {/* Mobile Menu */}
